@@ -4,32 +4,32 @@
     <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
     <title>Erika's Portfolio</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css')}}">
+    <script src="https://kit.fontawesome.com/12bd066351.js" crossorigin="anonymous"></script>
 </head>
 <body data-gr-c-s-loaded="true" style="margin: 0px;">
+
+    {% include "_menu.html" %}
+
     <section>
-    <img src="/static/EAHeadshot.png" alt="Erika Avila" style="width:350px;height:250px;">
-    <div>
-        <h1>About Erika</h1>
+        <img class="bio" src="/static/EAHeadshot.png" alt="Erika Avila" style="width:350px;height:250px;">
+        <div>
+            <h1>About Erika</h1>
 
-        <p>Erika Avila is a recent graduate of Florida State University with a Bachelor of Science in Computer Science.
-            Originally from Colombia and now based in Miami, she also holds a Bachelor of Arts in Interdisciplinary Studies from Florida International University.</p>
-
-        <p>With experience in the administrative and accounting sector, Erika has served as an Administrative and Executive Assistant at
-            The Peebles Corporation, acting as a trusted gatekeeper for high-level executives.</p>
-
-        <p>In the summer of 2024, Erika joined Boxraw Labs, a UK based company with a primary focus on sporting apparel but with a
-        vision on revolutionizing the world of boxing thorugh cutting-edge technology and data-driven insights. As an intern, Erika
-        collaborated with the CTO on various data analysis projects using Python as the main coding language.</p>
-
-        <p>Although her passion for computers began at a young age, Erika only recently pursued a career in technology.
-            She embraces learning as a lifelong journey and finds joy in expanding her knowledge and skills.
-            Her interests include martial arts, traveling, and photography.</p>
-    </div>
+            <p class="about">Erika Avila is a recent graduate of Florida State University with a Bachelor of Science in Computer Science.
+                Originally from Colombia and now based in Miami, she also holds a Bachelor of Arts in Interdisciplinary Studies from Florida International University.
+            <br><br>
+            With experience in the administrative and accounting sector, Erika has served as an Administrative and Executive Assistant at
+                The Peebles Corporation, acting as a trusted gatekeeper for high-level executives.
+            <br><br>
+            In the summer of 2024, Erika joined Boxraw Labs, a UK based company with a primary focus on sporting apparel but with a
+            vision on revolutionizing the world of boxing thorugh cutting-edge technology and data-driven insights. As an intern, Erika
+            collaborated with the CTO on various data analysis projects using Python as the main coding language.
+            <br><br>
+            Although her passion for computers began at a young age, Erika only recently pursued a career in technology.
+                She embraces learning as a lifelong journey and finds joy in expanding her knowledge and skills.
+                Her interests include martial arts, traveling, and photography.</p>
+        </div>
     </section>
-
-
-    <h3><a href="/">Back</a></h3>
-
 
 
 </body>

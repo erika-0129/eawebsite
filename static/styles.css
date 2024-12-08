@@ -1,21 +1,67 @@
 body{
-    background: #FFFFE3;
-    color: #253A52;
+    background: #0d0918;
+    color: #ffe6ff;
     padding: 30px;
     font-family:sans-serif;
 }
 
-a{
-    text-decoration: none;
-    color: #FFFFE3
-    background: #1348DA;
-    padding: 0 1rem;
-    height: 2.5rem;
-    display: inline-flex;
-    alight-items: center;
-    border_radius: 1.25rem;
+/* unvisited link */
+a:link {
+  color: #d6d6f5;
+}
+
+/* visited link */
+a:visited {
+  color: #666699;
+}
+
+/* mouse over link */
+a:hover {
+  color: hotpink;
+}
+
+/* selected link */
+a:active {
+  color: #6f6fdc;
 }
 
 section{
     display: flex;
+    padding: 5px;
+    text-align: center;
+    margin-left: 20px;
+    margin-right: 150px;
+}
+
+div.projects{
+    padding: 5px;
+    margin-left: 20px;
+}
+
+div.home{
+    margin-left: 100px;
+    padding: 5px;
+}
+
+p.about{
+    text-align: justify;
+
+}
+
+h2.menu{
+    text-align:center;
+    padding: 15px;
+}
+
+h2.social{
+    text-align:center;
+    margin-top: 150px;
+}
+
+img.comp{
+    margin-left: 100px;
+}
+
+img.bio{
+    margin-top: 50px;
 }

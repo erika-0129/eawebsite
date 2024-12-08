@@ -4,16 +4,27 @@
     <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
     <title>Erika's Portfolio</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css')}}">
+    <script src="https://kit.fontawesome.com/12bd066351.js" crossorigin="anonymous"></script>
+
 </head>
 <body data-gr-c-s-loaded="true" style="margin: 0px;">
 
-    <h1>Welcome to Erika's Portfolio</h1>
+    {% include "_menu.html" %}
+    <div class="home">
+        <h1>Erika Avila <i class="fa-regular fa-heart"></i></h1>
 
-    <p>This is a portfolio designed to showcase some projects Erika has worked on, including this website!</p>
+        <section>
+            <p>This is a portfolio designed to showcase some projects <br> Erika has worked on, including this website!</p>
+            <img class="comp" src="/static/ComImage.png" alt="computer image" style="width:350px;height:250px;">
+        </section>
+    </div>
 
-    <h3><a href="/about">About Me</a></h3>
-    <h3><a href="/projects">Projects</a></h3>
-    <h3><a href="/resume">Resume</a></h3>
+    <h2 class="social">
+        <a href="https://www.linkedin.com/in/erika-d-avila/" target="_blank"><i class="fa-brands fa-linkedin" style="font-size:24px;"></i></a> &nbsp;
+        <a href="https://github.com/erika-0129" target="_blank"><i class="fa-brands fa-github" style="font-size:24px;"></i></a> &nbsp;
+        <a href="https://www.instagram.com/erika_0129/" target="_blank"><i class="fa-brands fa-instagram"></i></a> &nbsp;
+        <a href="mailto:eavila0194@gmail.com"><i class="fa-regular fa-envelope"></i></a>
+    </h2>
 
 </body>
 </html>

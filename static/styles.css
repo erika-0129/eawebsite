@@ -1,0 +1,21 @@
+body{
+    background: #FFFFE3;
+    color: #253A52;
+    padding: 30px;
+    font-family:sans-serif;
+}
+
+a{
+    text-decoration: none;
+    color: #FFFFE3
+    background: #1348DA;
+    padding: 0 1rem;
+    height: 2.5rem;
+    display: inline-flex;
+    alight-items: center;
+    border_radius: 1.25rem;
+}
+
+section{
+    display: flex;
+}

@@ -36,33 +36,34 @@ section{
 div.projects{
     padding: 5px;
     margin-left: 20px;
+    font-size: 110%
 }
 
 div.home{
-    margin-left: 100px;
+    width: 70%;
+    margin: 0 auto;
     padding: 5px;
-    display: inline-block;
+
 }
 
 div.menu{
     border-radius: 25px;
-    border: 2px solid #666699;
+    border: 3px solid #666699;
     width: 400px;
     margin: auto;
 }
 
 p.about{
     text-align: justify;
+    font-size: 120%;
 
 }
 
 h1.name{
     font-family: "Consolas", monospace;
-    font-weight: bold;
     overflow: hidden;
     border-right: .15em hotpink;
     white-space: nowrap;
-    font-size: 2rem;
     width: 0;
     animation:
         typing 1s steps(20, end) forwards,

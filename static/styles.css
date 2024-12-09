@@ -41,11 +41,44 @@ div.projects{
 div.home{
     margin-left: 100px;
     padding: 5px;
+    display: inline-block;
+}
+
+div.menu{
+    border-radius: 25px;
+    border: 2px solid #666699;
+    width: 400px;
+    margin: auto;
 }
 
 p.about{
     text-align: justify;
 
+}
+
+h1.name{
+    font-family: "Consolas", monospace;
+    font-weight: bold;
+    overflow: hidden;
+    border-right: .15em hotpink;
+    white-space: nowrap;
+    font-size: 2rem;
+    width: 0;
+    animation:
+        typing 1s steps(20, end) forwards,
+        blink .8s infinite;
+}
+
+/* Typing effect for name*/
+@keyframes typing {
+    from { width: 0 }
+    to { width: 50% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink {
+  from { border-color: transparent }
+  to { border-color: hotpink; }
 }
 
 h2.menu{

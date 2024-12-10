@@ -25,7 +25,6 @@ a:active {
   color: #6f6fdc;
 }
 
-
 section.home{
     display: flex;
     flex-direction: column;
@@ -88,7 +87,7 @@ section.projects i {
 div.menu{
     border-radius: 25px;
     border: 3px solid #666699;
-    width: 400px;
+    width: 350px;
     margin: auto;
     margin-top: 25px;
     text-align:center;
@@ -152,7 +151,7 @@ img.bio{
 /* Responsive Design for Smaller Screens */
 @media (max-width: 768px) {
     section.home {
-        width: 90%; /* Allow more space on small screens */
+        width: 90%;
         padding: 20px;
     }
     section.about {
@@ -186,15 +185,16 @@ img.bio{
     }
 
     img.comp {
-        max-width: 70%; /* Slightly smaller image for mobile */
+        max-width: 70%;
         max-height: 150px;
     }
 
     div.social {
-        margin-top: 10px; /* Reduce top margin */
+        margin-top: 10px;
+        font-size: 18px;
     }
 
-        section.projects {
+    section.projects {
         padding: 15px;
     }
 
@@ -227,13 +227,14 @@ img.bio{
     }
 
     img.comp {
-        max-width: 60%; /* Further reduce size */
-        max-height: 120px;
+        max-width: 70%;
     }
 
-    div.social i {
-        font-size: 18px; /* Adjust icon sizes */
+    div.social {
+        margin-top: 10px;
+        font-size: 18px;
     }
+
     p.about {
         font-size: 0.8rem;
         line-height: 1.4;

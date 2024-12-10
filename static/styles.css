@@ -87,7 +87,7 @@ section.projects i {
 div.menu{
     border-radius: 25px;
     border: 3px solid #666699;
-    width: 350px;
+    width: 300px;
     margin: auto;
     margin-top: 25px;
     text-align:center;
@@ -223,7 +223,7 @@ img.bio{
 
 @media (max-width: 480px) {
     h1.name {
-        font-size: 1.5rem; /* Further adjust font size */
+        font-size: 1.25rem; /* Further adjust font size */
     }
 
     img.comp {

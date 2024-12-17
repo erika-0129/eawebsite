@@ -19,7 +19,7 @@ def projects():
 
 @app.route("/resume")
 def resume():
-    return redirect("https://www.dropbox.com/scl/fi/id1ohdm353m4qahxu6gzg/Erika-Avila-Resume.pdf?rlkey=56n5a6cp91q33jejx8grm0e94&st=04f0k5ph&dl=0")
+    return redirect("https://www.dropbox.com/scl/fi/rha1xx9mnmdqsfy67q89f/resume_erika_avila.pdf?rlkey=v7nw9wg2kzqripi5kiz9ahw9f&dl=0")
 
 
 if __name__ == '__main__':

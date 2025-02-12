@@ -7,7 +7,7 @@
     <meta property="og:url" content="https://eawebsite.onrender.com/valentines">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:type" content="website">
-    <title>Valentine's Day Question</title>
+    <title>Will you be my Valentine?</title>
     <style>
         body {
             display: flex;
@@ -51,10 +51,14 @@
             display: flex;
             gap: 10px;
         }
-        h1.question{
+        h1.vquestion{
             font-family: Fira Code, monospace;
-            margin-top: 5px;
+            top: 80px;
+            left: 50%
+            transform: translateX(-50%);
             text-align: center;
+            position: absolute;
+
         }
 
         @keyframes floatingHearts {
@@ -81,12 +85,46 @@
             animation: floatingHearts 5s linear infinite;
             opacity: 0;
         }
+
+        /* New Valentine questions and answers section */
+        .final-screen {
+            display: none;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .question {
+            display: none;
+            flex-direction: column;
+            text-align: center;
+            width: 100%;
+        }
+        .active {
+            display: block;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #ff80ab;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #ff4081;
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
     </style>
 </head>
 <body>
-    <h1 id="question" class="question">Will you be my Valentine?</h1><br><br>
+    <h1 id="vquestion" class="vquestion">Will you be my Valentine?</h1><br><br>
     <div class="container" id="container">
-
         <div id="left-penguin" class="penguin"></div>
         <div id="right-penguin" class="penguin"></div>
         <img id="heart" class="heart" src="static/heart.png" alt="Heart">
@@ -99,20 +137,23 @@
         <button onclick="sayYes()">Yes! 💖</button>
         <button onclick="sayNo()">No... 😢</button>
     </div>
-    <div class="hearts-container">
-    <!-- JS will generate floating hearts -->
+    <div id="questions-container" class="questions-container" style="display: none;">
+        {% include "valentine_responses.html" %}
     </div>
-
+    <div class="hearts-container"></div>
+    
 
     <script>
         let distance = 50;
+        let questionnaireStarted = false;
+        let responses = [];
 
         window.onload = function() {
             updateDistance(); // Set initial margins on load
         };
 
         function moveCloser() {
-            if (distance > 0) { // Allow overlap by going negative
+            if (distance > 0) {
                 distance -= 10;
                 updateDistance();
             }
@@ -121,7 +162,9 @@
         function moveApart() {
             distance += 10;
             updateDistance();
+            resetPrompt();
         }
+
         function updateDistance() {
             let leftPenguin = document.getElementById('left-penguin');
             let rightPenguin = document.getElementById('right-penguin');
@@ -133,19 +176,109 @@
 
             if (distance <= 0) {
                 heart.style.opacity = 1;
-                responseButtons.style.display = "block"; // Show buttons
+                responseButtons.style.display = "block";
             } else {
                 heart.style.opacity = 0;
                 responseButtons.style.display = "none";
             }
         }
 
+        function resetPrompt() {
+            document.getElementById('vquestion').innerText = "Will you be my Valentine?";
+            if (questionnaireStarted) {
+                document.getElementById('questions-container').style.display = 'none';
+                questionnaireStarted = false;
+            }
+        }
+
         function sayYes() {
-            document.getElementById('question').innerText = "Yay! 🎉 Happy Valentine's Day! ❤️";
+            document.getElementById('vquestion').innerText = "Yay! 🎉 Happy Valentine's Day! ❤️";
+            document.getElementById('response-buttons').style.display = 'none';
+            document.getElementById('questions-container').style.display = 'block';
+            questionnaireStarted = true;
+            document.getElementById('q1').classList.add('active');
         }
 
         function sayNo() {
-            document.getElementById('question').innerText = "Oh no... 💔 The penguins are sad...";
+            let questionEl = document.getElementById('vquestion');
+            questionEl.innerText = "Oh no... 💔 The penguins are sad...";
+            questionEl.style.display = "block"; // Ensure it's visible
+            document.getElementById('response-buttons').style.display = 'none';
+            document.getElementById('questions-container').style.display = 'none';
+            questionnaireStarted = false;
+        }
+
+
+        function startQuestions() {
+            document.getElementById('questions-container').style.display = 'block';
+            document.getElementById('q1').classList.add('active');
+        }
+
+        function nextQuestion(current, next, answer) {
+            responses.push(document.getElementById(current).querySelector("h2").innerText + " " + answer);
+            console.log("✅ Stored responses:", responses);
+
+            document.getElementById(current).classList.remove('active');
+
+            if (current === "q3" || current === "q4") {
+                next = null; // Explicitly mark as the last question
+            }
+
+            if (next && document.getElementById(next)) {
+                console.log("➡️ Moving to next question:", next);
+                document.getElementById(next).classList.add('active');
+            } else {
+                console.log("🟢 No more questions left. Attempting to show results...");
+                displayResults();
+            }
+        }
+
+        function customAnswer(current, next, inputId) {
+            let input = document.getElementById(inputId).value.trim();
+            if (input !== "") {
+                responses.push(document.getElementById(current).querySelector("h2").innerText + " " + input);
+            }
+            console.log("✅ Stored responses:", responses);
+
+            document.getElementById(current).classList.remove('active');
+
+            if (current === "q3" || current === "q4") {
+                next = null; // Explicitly mark as the last question
+            }
+
+            if (next && document.getElementById(next)) {
+                console.log("➡️ Moving to next question:", next);
+                document.getElementById(next).classList.add('active');
+            } else {
+                console.log("🟢 No more questions left. Attempting to show results...");
+                displayResults();
+            }
+        }
+
+
+        function displayResults() {
+            console.log("🎉 Displaying final results...");
+            document.querySelectorAll('.question').forEach(q => q.classList.remove('active'));
+
+            let finalScreen = document.getElementById('final');
+            if (!finalScreen) {
+                console.error("❌ Final screen div not found!");
+                return;
+            }
+
+            finalScreen.classList.add('active');
+            finalScreen.style.display = 'block';
+
+            let resultsList = responses.join("<br>");
+            console.log("📝 Final Results:", resultsList);
+
+            let resultsDiv = document.getElementById('results');
+            if (!resultsDiv) {
+                console.error("❌ Results div not found!");
+                return;
+            }
+
+            resultsDiv.innerHTML = resultsList;
         }
 
         function createFallingHearts() {
@@ -160,7 +293,6 @@
         }
 
         createFallingHearts();
-
     </script>
 </body>
 </html>

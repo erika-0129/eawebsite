@@ -1,0 +1,33 @@
+<div id="questions-container">
+    <div class="question" id="q1">
+        <h2 style="font-family: Fira Code, monospace;">Chocolates or Flowers... or both?</h2>
+        <button onclick="nextQuestion('q1', 'q2', 'Chocolates')">Chocolates</button>
+        <button onclick="nextQuestion('q1', 'q2', 'Flowers')">Flowers</button>
+        <button onclick="nextQuestion('q1', 'q2', 'Both')">Both</button>
+    </div>
+    <div class="question" id="q2">
+        <h2 style="font-family: Fira Code, monospace;">Daytime or Nighttime Date?</h2>
+        <button onclick="nextQuestion('q2', 'q3', 'Daytime')">Daytime</button>
+        <button onclick="nextQuestion('q2', 'q4', 'Nighttime')">Nighttime</button>
+    </div>
+    <div class="question" id="q3">
+        <h2 style="font-family: Fira Code, monospace;">Daytime perfect date?</h2>
+        <button onclick="nextQuestion('q3', 'final', 'Picnic at the park')">Picnic at the park</button>
+        <button onclick="nextQuestion('q3', 'final', 'Beach day')">Beach day</button>
+        <input type="text" placeholder="Your own idea" id="customDaytime">
+        <button onclick="customAnswer('q3', 'final', 'customDaytime')">Submit</button>
+    </div>
+    <div class="question" id="q4">
+        <h2 style="font-family: Fira Code, monospace;">Nighttime perfect date?</h2>
+        <button onclick="nextQuestion('q4', 'final', 'Dinner and movies')">Dinner and movies</button>
+        <button onclick="nextQuestion('q4', 'final', 'Dancing')">Dancing</button>
+        <input type="text" placeholder="Your own idea" id="customNighttime">
+        <button onclick="customAnswer('q4', 'final', 'customNighttime')">Submit</button>
+    </div>
+</div>
+
+<div class="final-screen" id="final">
+    <h2 style="font-family: Fira Code, monospace;">Here’s your perfect Valentine's plan!</h2>
+    <p style="font-family: Fira Code, monospace;" id="results"></p>
+    <p style="font-family: Fira Code, monospace;">Take a screenshot and share with your Valentine! 💕</p>
+</div>

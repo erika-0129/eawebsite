@@ -25,9 +25,17 @@ def resume():
 def certifications():
     return render_template('certifications.html')
 
+"""
+    For Valentines Day Website
+"""
+
 @app.route("/valentines")
 def valentine():
-    return render_template('valentines.html')
+    if request.method == "POST":
+        session['answers'] = request.form.to_dict()
+        return render_template("valentines_responses.html", answers=session['answers'])
+    return render_template("valentines.html")
+
 
 if __name__ == '__main__':
     app.run(debug=True)

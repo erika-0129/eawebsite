@@ -335,3 +335,51 @@ img.bio{
         margin-top: 5px;
     }
 }
+
+/* For AlloCredit Website */
+section.allocredit_home{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    text-align: center;
+    padding: 0 10px;
+    margin: 0 auto;
+    border-radius: 22px;
+    overflow: hidden;
+    font-weight: bold;
+}
+
+p.allocredit_loginLink{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 50px;
+    font-weight: bold;
+}
+
+section.allocredit_login_landing{
+    display: block;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    text-align: center;
+    padding: 0 10px;
+    margin: 0 auto;
+    border-radius: 22px;
+    overflow: hidden;
+    font-weight: Normal;
+}
+
+section.allocredit_new_user{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 60vh;
+    padding: 0 10px;
+    margin: 0 auto;
+    border-radius: 22px;
+    font-weight: bold;
+}

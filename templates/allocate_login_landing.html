@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Log in to AlloCredit</title>
+    {% include "_head.html" %}
+</head>
+<body class="allocate_login_pg">
+    <form action="/allocate_login" method="POST">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                    <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        <section class="allocredit_login_landing">
+            <h1>Login</h1>
+            <input type="text" value="" placeholder="Username" name="username"><br>
+            <input type="password" value="" placeholder="Password" name="password" id="password"><br>
+            <input type="checkbox" onclick="showPassword()">Show Password<br>
+            <input type="submit" value="Log In"><br>
+
+            <p>Placeholder link: Forgot my password</p>
+            <a href="/allocate_landing">Home</a>
+        </section>
+    </form>
+<script>
+    function showPassword(){
+        var x = document.getElementById("password");
+        if (x.type === "password"){
+            x.type = "text";
+        } else {
+        x.type = "password";
+        }
+    }
+</script>
+</body>
+</html>

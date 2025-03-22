@@ -359,27 +359,206 @@ p.allocredit_loginLink{
     font-weight: bold;
 }
 
-section.allocredit_login_landing{
-    display: block;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 60vh;
+section.allocredit_login_landing,
+section.allocredit_new_user{
     text-align: center;
-    padding: 0 10px;
-    margin: 0 auto;
-    border-radius: 22px;
-    overflow: hidden;
+    padding: 100px;
     font-weight: Normal;
+    margin: auto;
+    width: 50%;
+}
+
+section.allocredit_login_landing input[type="text"],
+section.allocredit_login_landing input[type="password"],
+section.allocredit_new_user input[type="text"],
+section.allocredit_new_user input[type="email"],
+section.allocredit_new_user input[type="password"]{
+    width: 80%; /* Makes input boxes wider */
+    max-width: 300px; /* Prevents them from getting too wide */
+    padding: 12px; /* Makes them taller */
+    font-size: 18px; /* Increases text size */
+    margin: 10px 0; /* Adds space between inputs */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Prevents size issues */
+}
+
+section.allocredit_login_landing input[type="submit"],
+section.allocredit_new_user input[type="submit"]
+{
+    width: 85%;
+    max-width: 320px;
+    padding: 12px;
+    font-size: 18px;
+    background-color: #d6d6f5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
 }
 
 section.allocredit_new_user{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 50px;
+    width:60%;
+    margin-left: auto;
+}
+
+
+section.allocredit_new_user label{
+    min-width: 120px;
+    text-align: right;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+section.allocredit_login_landing input[type="submit"]:hover,
+section.allocredit_new_user input[type="submit"]:hover{
+    background-color: #f1f1f1;
+}
+
+section.allocredit_login_landing input[type="checkbox"] {
+    margin-top: 10px;
+}
+
+section.allocredit_logged_in{
+    flex-direction: column;
     align-items: center;
     height: 60vh;
-    padding: 0 10px;
+    padding: 20px;
     margin: 0 auto;
     border-radius: 22px;
     font-weight: bold;
+}
+
+/* Navigation Bar */
+.navbar {
+    position: fixed;
+    top: 10px; /* Adds padding from the top */
+    right: 20px; /* Adds padding from the right */
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Ensures spacing between items */
+    background-color: transparent; /* Keeps it clean */
+    z-index: 1000;
+}
+
+/* Navigation Links */
+.navbar a {
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 10px 16px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: violet;
+    color: white;
+}
+
+/* Dropdown Container */
+.dropdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Dropdown Button */
+.dropbtn {
+    color: white;
+    padding: 12px 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+}
+
+/* Dropdown Button Hover Effect */
+.dropbtn:hover {
+    background-color: violet;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%; /* Ensures dropdown appears below the button */
+    left: 0;
+    background-color: #d6d6f5;
+    min-width: 180px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    padding: 10px 0;
+    text-align: center;
+}
+
+/* Dropdown Links */
+.dropdown-content a {
+    display: block;
+    padding: 12px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover Effect on Dropdown Links */
+.dropdown-content a:hover {
+    background-color: violet;
+}
+
+/* Show Dropdown Menu on Hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Table View */
+
+table{
+    margin-left: 40px;
+    margin-top: 40px;
+}
+table, th, td{
+    border: 2px solid;
+    border-collapse: collapse;
+    border-color: #d6d6f5;
+}
+
+th{
+    color: white;
+}
+tr:nth-child(even){
+    background-color: #3c2a6f
+}
+
+th, td{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+}
+
+/* App user information display*/
+
+
+section.allocredit_app_user{
+    margin-left: 40px;
+    margin-top: 40px;
+    line-height: 1.8;
+    font-size: 18px;
+}
+
+section.allocredit_app_user h1{
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: white;
 }

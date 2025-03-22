@@ -3,13 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Create New User</title>
-    {% include "_head.html" %}
+    {% include "_head_allocredit.html" %}
 </head>
 <body>
 
     <form action="/addrecord" method="POST">
-        <h1>Create your account</h1>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                    <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        {% include "_body_menu_allocredit.html" %}
+
         <section class="allocredit_new_user">
+            <h1>Create your account</h1>
             <label>First Name: </label>
             <input type="text" name="F_Name" placeholder="Jane" required size=20 maxlength=n>
             <label>Last Name: </label>
@@ -26,6 +37,5 @@
         </section>
     </form>
 
-    <a href="/allocate_landing">Back to Home Page</a>
 </body>
 </html>

@@ -2,13 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Under Construction</title>
+    <title>AlloCredit Home</title>
+    {% include "_head_allocredit.html" %}
 </head>
 <body>
     {% if session['logged_in'] %}
-        <h1>Welcome {{U_Name}}</h1>
-        This site is under construction
-        <a href="/logout">Log Out</a>
+        <section class="allocredit_logged_in">
+            <h1>Welcome {{Name}}</h1>
+            {% include "_body_menu_allocredit.html" %}
+
+        </section>
     {% endif %}
 
 </body>

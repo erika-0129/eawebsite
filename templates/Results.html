@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Result</title>
+    {% include "_head.html" %}
 </head>
 <body>
-
+{% if session['logged_in'] %}
 <!--- Returns message after user has been input --->
 Query Result : {{msg}}
 <br>

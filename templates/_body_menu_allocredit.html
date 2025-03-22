@@ -1,0 +1,22 @@
+{% if session['admin1'] %}
+<div class="navbar">
+    <a href="/allocate_login_landing">Home</a>
+
+    <div class="dropdown">
+        <button class="dropbtn">User</button>
+        <div class="dropdown-content">
+            <a href="/CurrentUsers">Display Users</a><br>
+            <a href="/ShowUserInfo">My Info</a><br><br>
+        </div>
+    </div>
+    <a href="/logout">Log Out</a>
+</div>
+{% endif %}
+
+{% if not session.get('logged_in', False) %}
+<div class="navbar">
+    <a href="/allocate_landing">Home</a>
+    <a href="/create_account">Create Account</a>
+    <a href="/allocate_login_landing">Log In</a>
+</div>
+{% endif %}

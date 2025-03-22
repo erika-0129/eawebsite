@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Log in to AlloCredit</title>
-    {% include "_head.html" %}
+    {% include "_head_allocredit.html" %}
 </head>
 <body class="allocate_login_pg">
     <form action="/allocate_login" method="POST">
@@ -16,15 +16,16 @@
                 </ul>
             {% endif %}
         {% endwith %}
+        {% include "_body_menu_allocredit.html" %}
         <section class="allocredit_login_landing">
             <h1>Login</h1>
             <input type="text" value="" placeholder="Username" name="username"><br>
             <input type="password" value="" placeholder="Password" name="password" id="password"><br>
             <input type="checkbox" onclick="showPassword()">Show Password<br>
-            <input type="submit" value="Log In"><br>
+            <input type="submit" value="Log In"><br><br>
 
             <p>Placeholder link: Forgot my password</p>
-            <a href="/allocate_landing">Home</a>
+
         </section>
     </form>
 <script>

@@ -1,6 +1,5 @@
-from flask import Flask, url_for, render_template, request, session, flash, redirect
+from flask import Flask, render_template, request, session, redirect
 import os
-import pandas as pd
 
 
 app = Flask(__name__)

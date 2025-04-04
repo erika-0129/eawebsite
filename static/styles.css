@@ -351,16 +351,7 @@ section.allocredit_home{
     font-weight: bold;
 }
 
-p.allocredit_loginLink{
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 50px;
-    font-weight: bold;
-}
-
-section.allocredit_login_landing,
-section.allocredit_new_user{
+section.allocredit_login_landing{
     text-align: center;
     padding: 100px;
     font-weight: Normal;
@@ -401,20 +392,11 @@ section.allocredit_new_user input[type="submit"]
 section.allocredit_new_user{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
-    padding: 50px;
-    width:60%;
-    margin-left: auto;
+    margin-left: 40px;
+    margin-top: 40px;
 }
 
 
-section.allocredit_new_user label{
-    min-width: 120px;
-    text-align: right;
-    margin-right: 10px;
-    font-weight: bold;
-}
 
 section.allocredit_login_landing input[type="submit"]:hover,
 section.allocredit_new_user input[type="submit"]:hover{
@@ -550,15 +532,20 @@ th, td{
 /* App user information display*/
 
 
-section.allocredit_app_user{
+section.allocredit_app_user,
+section.allocredit_about,
+section.allocredit_current_users{
     margin-left: 40px;
     margin-top: 40px;
     line-height: 1.8;
     font-size: 18px;
 }
 
-section.allocredit_app_user h1{
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: white;
+
+/* AlloCredit About Page*/
+section.allocredit_about p{
+    display: inline-block;
+    width: 700px;
+    height: 800px;
+    text-align: justify;
 }

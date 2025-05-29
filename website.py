@@ -24,7 +24,7 @@ def projects():
 @app.route("/resume")
 def resume():
     return redirect(
-        "https://www.dropbox.com/scl/fi/rha1xx9mnmdqsfy67q89f/resume_erika_avila.pdf?rlkey=v7nw9wg2kzqripi5kiz9ahw9f&dl=0")
+        "https://www.dropbox.com/scl/fi/r7qudm8phg6jlofrwom2l/resume_erika_avila.pdf?rlkey=1ix6d8imz5d6c43lnjlttq413&dl=0")
 
 @app.route("/certifications")
 def certifications():

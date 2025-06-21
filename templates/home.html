@@ -1,33 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    {% include "_head.html" %}
-    <meta
-        name="description"
-        content="Portfolio for Erika Avila, who is pursuing a career in tech."/>
-    <meta property="og:url" content="https://eawebsite.onrender.com/"/>
-    <title>Welcome</title>
-</head>
-<body data-gr-c-s-loaded="true" style="margin: 0px;">
-
-    {% include "_menu.html" %}
+{% extends "layout.html" %}
+{% block title %} Home {% endblock %}
+{% block body %}
 
     <section class="home">
         <h1 class="name">Erika Avila <i class="fa-regular fa-heart"></i></h1>
-        <p style="font-size: 1.rem;">
-            Crafting Code, Analyzing Data, Building the Future <br>
-        </p>
     </section>
 
-    <div class="social">
-        <a href="https://www.linkedin.com/in/erika-d-avila/" target="_blank"><i class="fa-brands fa-linkedin" style="font-size: 24px;"></i></a>&nbsp;&nbsp;
-        <a href="https://github.com/erika-0129" target="_blank"><i class="fa-brands fa-github" style="font-size: 24px;"></i></a>&nbsp;&nbsp;
-        <a href="https://www.instagram.com/erika_0129/" target="_blank"><i class="fa-brands fa-instagram"></i></a>&nbsp;&nbsp;
-        <a href="mailto:erika12994@gmail.com"><i class="fa-regular fa-envelope"></i></a>
-    </div>
-    <footer>
-        <p style="text-align: center;">Made with ❤️ by Erika Avila</p>
-    </footer>
-
-</body>
-</html>
+{% endblock %}

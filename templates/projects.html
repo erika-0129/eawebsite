@@ -1,43 +1,136 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    {% include "_head.html" %}
-    <title>Projects</title>
-</head>
-<body data-gr-c-s-loaded="true" style="margin: 0px;">
+{% extends "layout.html" %}
+{% block title %} Projects {% endblock %}
+{% block body %}
 
-    {% include "_menu.html" %}
+<div class="project-grid">
+    <div class="main-project">
+        <h1 class="page-title">Projects</h1>
+        <p class="intro">
+            Projects that Erika has recently worked on, which include several different coding languages and libraries.
+        </p>
+        <p class="eyebrow">Android Development</p>
+        <div class="project-list-android">
+            <div class="project">
+                <p class="project-title">Tic Tac Nole</p>
+                <div class="prj-img">
+                    <img class="project-image" src="static/tic_tac_nole.png" alt="TicTacNole">
+                </div>
+                <p class="project-description">A nod to Tic Tac Toe game with a FSU spin created for android devices</p>
+                <a href="https://github.com/erika-0129/TicTacToe" style="font-size: 20px;"><i class="fa-brands fa-github"></i></a>
+            </div>
 
-    <section class="projects">
-        <h1 style="font-family: Fira Code, monospace;"><i class="fa-solid fa-laptop-code"></i> Projects</h1>
-        <p>Below are some of Erika's most recent projects:</p>
+            <div class="project">
+                <p class="project-title">Rock Paper Spear</p>
+                <div class="prj-img">
+                    <img class="project-image" src="static/rock_paper_spear.png" alt="RockPaperSpear">
+                </div>
+                <p class="project-description">A nod to Rock Paper Scissor with a FSU spin created for android devices</p>
+                <a href="https://github.com/erika-0129/RockPaperSpear" style="font-size: 20px;"><i class="fa-brands fa-github"></i></a>
+            </div>
 
-        <h3>Tic Tac Nole, 1 or 2 player</h3>
-        <p><i class="fa-brands fa-java"></i> <i class="fa-brands fa-android"></i> &nbsp; An Android game using Android Studio and Java.<br>
-            <a href="https://youtube.com/shorts/_NeIc50JcUY?feature=share" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-            <a href="https://github.com/erika-0129/TicTacToe" target="_blank"><i class="fa-brands fa-github"></i></a></p>
+            <div class="project">
+                <p class="project-title">Weather Android App</p>
+                <div class="prj-img">
+                    <img class="project-image" src="static/weather_app.png" alt="Weather-app">
+                </div>
+                <p class="project-description">A weather application for android devices</p>
+                <a href="https://github.com/erika-0129/WeatherAppAndroid" style="font-size: 20px;"><i class="fa-brands fa-github"></i></a>
+            </div>
+        </div>
 
-        <h3>Rock, Paper, Spear Android Game</h3>
-        <p><i class="fa-brands fa-java"></i> <i class="fa-brands fa-android"></i>&nbsp; An Android game using Android Studio and Java.<br>
-            <a href="https://youtube.com/shorts/pGJNd21kVBQ" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-            <a href="https://github.com/erika-0129/RockPaperSpear" target="_blank"><i class="fa-brands fa-github"></i></a></p>
+        <p class="eyebrow">Web Development</p>
+        <div class="project-list-web-dev">
+            <div class="project">
+                <p class="project-title">Valentines Website</p>
+                <div class="prj-img">
+                    <img class="project-image" src="static/valentines.png" alt="valentines">
+                </div>
+                <p class="project-description">A mobile-friendly website to send to your valentine</p>
+                <a href="https://eawebsite.onrender.com/valentines" style="font-size: 20px;"><i class="fa-solid fa-globe"></i></a>
+            </div>
+            <div class="project">
+                <p class="project-title">Google Clone</p>
+                <div class="prj-img">
+                    <img class="project-image" src="static/google_copy.png" alt="google">
+                </div>
+                <p class="project-description">Replica Google site with search capabilities</p>
+            </div>
 
-        <h3>Weather App Android App</h3>
-        <p><i class="fa-brands fa-java"></i> <i class="fa-brands fa-android"></i> <i class="fa-regular fa-sun"></i>&nbsp; An Android app using Android Studio and Java.<br>
-            <a href="https://youtu.be/FSUnO56_J0I" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-            <a href="https://github.com/erika-0129/WeatherAppAndroid" target="_blank"><i class="fa-brands fa-github"></i></a></p>
+            <div class="project">
+                <p class="project-title">Wiki Website</p>
+                <div class="prj-img">
+                    <img class="project-image" src="static/wiki_mock.png" alt="wiki">
+                </div>
+                <p class="project-description">A site similar to Wikipedia to search encyclopedia</p>
+            </div>
 
-        <h3>BudgetBuddy, an accounting allocation program</h3>
-        <p><i class="fa-brands fa-python"></i>&nbsp; A program created via Python using Google Gemini API to search transactions and give them a one-word allocation.<br>
-            <a href="https://youtu.be/srmLkn06K24" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-            <a href="https://github.com/erika-0129/AccountingAllocations" target="_blank"><i class="fa-brands fa-github"></i></a></p>
+            <div class="project">
+                <p class="project-title">Auction Website</p>
+                <div class="prj-img">
+                    <img class="project-image" src="static/commerce_site.png" alt="commerce_site">
+                </div>
+                <p class="project-description">A site developed for selling and auctioning items</p>
+            </div>
 
-        <h3>This website! <i class="fa-regular fa-face-smile-wink"></i></h3>
-        <p><i class="fa-brands fa-python"></i> <i class="fa-brands fa-css"></i>&nbsp; Created using Python Flask and incorporating HTML and CSS.<br>
-            <a href="https://github.com/erika-0129/eawebsite" target="_blank"><i class="fa-brands fa-github"></i></a></p>
+            <div class="project">
+                <p class="project-title">Mail Site</p>
+                <div class="prj-img">
+                    <img class="project-image" src="static/mail_site.png" alt="mail">
+                </div>
+                <p class="project-description">A website for sending and receiving emails</p>
+            </div>
 
-        <h3>Simple Valentine's day website: <a href="/valentines"><br>Valentine's Question</a></h3>
-    </section>
+            <div class="project">
+                <p class="project-title">Social Media Website</p>
+                <div class="prj-img">
+                    <img class="project-image" src="static/social_media_site.png" alt="social_media">
+                </div>
+                <p class="project-description">Social media site to post, follow and like along with other users</p>
+            </div>
 
-</body>
-</html>
+            <div class="project">
+                <p class="project-title">Study Flashcards</p>
+                <div class="prj-img">
+                    <img class="project-image" src="static/naturalization_flashcards.png" alt="flashcards">
+                </div>
+                <p class="project-description">Interactive flashcards to study for U.S. Naturalization Test</p>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <aside>
+            <h2 class="visually-hidden">My Skills</h2>
+            <ul class="icon-list" role="list">
+                <li>
+                    <p class="visually-hidden">python</p>
+                    <i class="fa-brands fa-python" alt=""></i>
+                </li>
+                <li>
+                    <p class="visually-hidden">html</p>
+                    <i class="fa-brands fa-html5" alt=""></i>
+                </li>
+                <li>
+                    <p class="visually-hidden">css</p>
+                    <i class="fa-brands fa-css" alt=""></i>
+                </li>
+                <li>
+                    <p class="visually-hidden">javascript</p>
+                    <i class="fa-brands fa-js" alt=""></i>
+                </li>
+                <li>
+                    <p class="visually-hidden">java</p>
+                    <i class="fa-brands fa-java" alt=""></i>
+                </li>
+                <li>
+                    <p class="visually-hidden">android</p>
+                    <i class="fa-brands fa-android" alt=""></i>
+                </li>
+            </ul>
+        </aside>
+</div>
+
+
+{% endblock %}

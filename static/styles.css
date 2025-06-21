@@ -1,31 +1,74 @@
-body{
-    background: #0d0918;
-    color: #ffe6ff;
+:root {
+    --clr-neutral-100: hsla(0, 0%, 100%, 1);
+    --clr-primary-800: hsla(229, 47%, 17%, 1);
+    --clr-primary-700: hsla(229, 43%, 20%, 1);
+    --clr-primary-400: hsla(230, 50%, 58%, 0.3);
+    --clr-primary-300: hsla(229, 36%, 39%, 1);
+    --clr-primary-200: hsla(229, 21%, 53%, 1);
+    --clr-accent-400: rgb(226, 34, 101);
+    --clr-secondary-400: hsla(229, 78%, 60%, 1);
+
+    --ff-base: "Outfit", sans-serif;
+    --ff-title: "Fira Code", monospace;
+
+    --fw-regular: 300;
+    --fw--semi-bold: 400;
+    --fw-bold: 700;
+
+    --fs-200: 0.50rem;
+    --fs-300: 0.75rem;
+    --fs-400: 1rem;
+    --fs-500: 1.125rem;
+    --fs-600: 1.375rem;
+    --fs-700: clamp(2rem, 10vw - 0.5rem, 2.5rem);
+}
+
+html {
+    color-scheme: dark;
+    /* Prevent horizontal scrollbar from very wide elements */
+    overflow-x: hidden;
+}
+
+/* Box sizing*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
     margin: 0;
-    font-family:sans-serif;
+    background: #0d0918;
+    font-family: var(--ff-base);
+    font-size: var(--fs-400);
+    line-height: 1.5;
+    color: var(--clr-neutral-100);
+    font-weight: var(--fw-regular);
+    /* Prevents horizontal scrollbar on body if any element overflows */
+    overflow-x: hidden;
 }
 
 /* unvisited link */
 a:link {
-  color: #d6d6f5;
+    color: #d6d6f5;
 }
 
 /* visited link */
 a:visited {
-  color: #666699;
+    color: #666699;
 }
 
 /* mouse over link */
 a:hover {
-  color: hotpink;
+    color: hotpink;
 }
 
 /* selected link */
 a:active {
-  color: #6f6fdc;
+    color: #6f6fdc;
 }
 
-section.home{
+section.home {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -36,7 +79,10 @@ section.home{
     margin: 0 auto;
     border-radius: 22px;
     overflow: hidden;
+    /* Keep this to hide content outside of the section */
     font-weight: bold;
+    max-width: 100%;
+    /* Ensure it doesn't overflow */
 }
 
 section.home::before {
@@ -52,111 +98,21 @@ section.home::before {
     background-position: center center;
     border-radius: 22px;
     opacity: 0.5;
-    z-index: -1; /* Moves the background behind content */
+    z-index: -1;
+    /* Moves the background behind content */
 }
 
-section.about{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    height: 75vh;
-    padding: 20px;
-    margin: 0 auto;
-    max-width: 1200px;
-    text-align: justify;
-}
-
-section.projects{
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: left;
-}
-
-section.projects h1 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #ffe6ff;
-}
-
-section.projects h3 {
-    font-size: 1.5rem;
-    margin-top: 30px;
-    color: #ffb6c1; /* Soft pink for differentiation */
-}
-
-section.projects p {
-    font-size: 1rem;
-    line-height: 1.6;
-    margin: 10px 0;
-}
-
-section.projects a {
-    margin: 0 10px;
-    color: #d6d6f5;
-    font-size: 1.2rem;
-}
-
-section.projects i {
-    font-size: 1.2rem;
-    margin-right: 5px;
-}
-
-div.certifications{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-    align-items: center;
-    height: 60vh;
-    padding: 20px;
-    margin: 0 auto;
-    max-width:800px;
-    animation: fadeInAnimation ease 3s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-}
-@keyframes fadeInAnimation{
-    0%{
+@keyframes fadeInAnimation {
+    0% {
         opacity: 0;
     }
-    100%{
+
+    100% {
         opacity: 1;
     }
 }
 
-img.certimg{
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-}
-
-nav.menu{
-    border-radius: 25px;
-    border: 3px solid #666699;
-    width: 350px;
-    margin: auto;
-    margin-top: 25px;
-    text-align:center;
-    padding: 15px;
-    font-size: 30px;
-}
-
-div.social{
-    text-align: center;
-    margin-top: 20px;
-    font-size: 30px;
-    padding: 15px;
-}
-
-p.about{
-    font-size: 1rem;
-    line-height: 1.6;
-    margin: 0;
-}
-
-h1.name{
+h1.name {
     font-family: "Fira Code", monospace;
     font-size: 3rem;
     overflow: hidden;
@@ -167,171 +123,566 @@ h1.name{
         typing 1s steps(20, end) forwards,
         blink .8s infinite;
     text-align: center;
+    /* Added to prevent overflow during typing animation on smaller screens */
+    max-width: 100%;
+    box-sizing: border-box;
+    /* Include padding/border in width */
 }
 
 /* Typing effect for name*/
 @keyframes typing {
-    from { width: 0 }
-    to { width: 50% }
+    from {
+        width: 0
+    }
+
+    to {
+        width: 50%
+    }
+
+    /* This 50% might be too wide on small screens. Consider max-width on h1.name */
 }
 
 /* The typewriter cursor effect */
 @keyframes blink {
-  from { border-color: transparent }
-  to { border-color: hotpink; }
+    from {
+        border-color: transparent
+    }
+
+    to {
+        border-color: hotpink;
+    }
 }
 
-img.bio{
+/* About Site */
+section.about {
+    display: grid;
+    gap: 1rem;
+    grid-auto-flow: column;
+    /* Forces them to go next to each other */
+    overflow-y: auto;
+    /*places the scrollbar within the page*/
+    padding-bottom: 1rem;
+    justify-content: start;
+    padding-top: 1rem;
+    text-align: justify;
+    margin: 0 auto;
+    /* Added to ensure the about section itself doesn't cause overflow */
+    max-width: 100%;
+}
+
+.long-bio {
+    border-radius: 0.5rem;
+    padding: 5px 20px 20px;
+    margin-right: 20px;
+    background: var(--clr-primary-800);
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.bio-header {
+    font-family: var(--ff-title);
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: var(--fs-700);
+}
+
+p.about {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+img.bio {
     margin: 0 20px;
     width: 350px;
+    /* This needs to be more flexible */
+    max-width: 100%;
+    /* Important for responsiveness */
+    height: auto;
+    border-radius: 0.5rem;
+    background: var(--clr-primary-800);
+}
+
+/* Local links */
+nav.menu {
+    border-radius: 25px;
+    border: 3px solid var(--clr-primary-800);
+    width: 350px;
+    /* Make this responsive */
+    margin: auto;
+    margin-top: 25px;
+    text-align: center;
+    padding: 15px;
+    font-size: 36px;
+    /* Make this responsive */
+    max-width: 90%;
+    /* Adjust as needed, prevents fixed width from overflowing */
+    box-sizing: border-box;
+}
+
+div.social {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 36px;
+    /* Make this responsive */
+    padding: 15px;
+    max-width: 100%;
+}
+
+/* Resume Site*/
+.visually-hidden {
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+.main-grid,
+.project-grid {
+    --_aside-width: clamp(2rem, 15vw, 10rem);
+    --_main-width: 1fr;
+    --_gap-size: 5vw;
+
+    display: grid;
+    grid-template-columns: var(--_aside-width) var(--_main-width);
+    grid-auto-flow: dense;
+    min-height: 100vh;
+    min-height: 100dvh;
+    align-items: center;
+    gap: var(--_gap-size);
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+main,
+.main-project {
+    grid-column: 2;
+    width: calc(100vw - var(--_gap-size) - var(--_aside-width));
+    padding-block: 2rem;
+    max-width: 100%;
+    box-sizing: border-box;
+
+}
+
+aside {
+    grid-column: 1;
+    align-self: stretch;
+    display: flex;
+    justify-content: end;
+    max-width: 100%;
+}
+
+.eyebrow {
+    color: var(--clr-secondary-400);
+    font-size: var(--fs-300);
+    font-weight: var(--fw-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    margin: 0;
+}
+
+.page-title {
+    font-size: var(--fs-700);
+    text-transform: uppercase;
+    margin: 0;
+    line-height: 1;
+}
+
+.intro {
+    font-size: var(--fs-500);
+    max-width: 95ch;
+}
+
+.job-experience,
+.universities,
+.certificates,
+.project-list-android,
+.project-list-web-dev {
+    display: grid;
+    gap: 1rem;
+    grid-auto-flow: column;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+    justify-content: start;
+    padding-top: 0.3rem;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+}
+
+.job-experience::-webkit-scrollbar,
+.universities::-webkit-scrollbar,
+.certificates::-webkit-scrollbar,
+.about::-webkit-scrollbar,
+.project-list-android::-webkit-scrollbar,
+.project-list-web-dev::-webkit-scrollbar {
+    height: 0.75rem;
+}
+
+.job-experience::-webkit-scrollbar-track,
+.universities::-webkit-scrollbar-track,
+.certificates::-webkit-scrollbar-track,
+.about::-webkit-scrollbar-track,
+.project-list-android::-webkit-scrollbar-track,
+.project-list-web-dev::-webkit-scrollbar-track {
+    background-color: var(--clr-primary-800);
+}
+
+.job-experience::-webkit-scrollbar-thumb,
+.universities::-webkit-scrollbar-thumb,
+.certificates::-webkit-scrollbar-thumb,
+.about::-webkit-scrollbar-thumb,
+.project-list-android::-webkit-scrollbar-thumb,
+.project-list-web-dev::-webkit-scrollbar-thumb {
+    background-color: var(--clr-accent-400);
+    border-radius: 100vw;
+}
+
+
+
+
+.job,
+.schools,
+.program {
+    border-radius: 0.5rem;
+    padding: 2rem;
+    background: var(--clr-primary-800);
+    width: 28.5rem;
+    min-width: 250px;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.job *,
+.schools *,
+.program *,
+.project * {
+    margin: 0;
+}
+
+.job-info,
+.school-name,
+.program-name {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1rem;
+    /* Allow flex items to wrap if needed */
+    flex-wrap: wrap;
+}
+
+.role {
+    line-height: 1.2;
+    font-size: var(--fs-600);
+}
+
+.year {
+    color: var(--clr-accent-400);
+    font-size: var(--fs-300);
+    font-weight: var(--fw-bold);
+    letter-spacing: 0.2rem;
+}
+
+.experience-type {
+    width: 10rem;
+}
+
+.icon-list {
+    height: 100%;
+    border-left: 1px solid var(--clr-primary-300);
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: grid;
+    align-content: center;
+    gap: 3rem;
+    font-size: 30px;
+    /* Added to prevent overflow if the icons push content out */
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.icon-list>li {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.icon-list>li::after {
+    --_size: 0.5rem;
+
+    content: "";
+    width: var(--_size);
+    aspect-ratio: 1;
+    outline: 0.5rem solid var(--clr-primary-400);
+    background-color: var(--clr-neutral-100);
+    border-radius: 50%;
+    position: absolute;
+    background: var(--clr-neutral-100);
+    top: 0;
+    left: 0;
+    transform: translateX(-50%);
+}
+
+/* Project Site */
+.project {
+    display: grid;
+    flex-direction: column;
+    border-radius: 0.5rem;
+    padding: 2rem;
+    background: var(--clr-primary-800);
+    width: 20rem;
+    text-align: center;
+    min-width: 200px;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.project-title {
+    color: var(--clr-accent-400);
+    font-size: var(--fs-300);
+    font-weight: var(--fw-bold);
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    padding-bottom: 1rem;
+}
+
+.prj-img {
+    width: 250px;
+    height: 250px;
+    margin-bottom: 1rem;
     max-width: 100%;
     height: auto;
-    border-radius: 10px;
+}
+
+img.project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 /* Responsive Design for Smaller Screens */
 @media (max-width: 768px) {
+
+    /* General body adjustments */
+    body {
+        padding: 0 10px;
+    }
+
     section.home {
         width: 90%;
         padding: 20px;
+        height: auto;
+        min-height: 50vh;
     }
+
+    section.home::before {
+        background-size: contain;
+        background-position: center top;
+    }
+
     section.about {
+        display: flex;
         flex-direction: column;
-        align-items: center;
         height: auto;
         padding: 20px;
         margin: 0 auto;
-    }
-    section.projects {
-        flex-direction: column;
-        align: left;
-        height: auto;
-        padding: 20px;
-        margin: 0 auto;
+        overflow-x: hidden;
     }
 
     img.bio {
         margin-bottom: 20px;
         width: 80%;
         max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .long-bio{
+        margin-right: 0;
     }
 
     p.about {
         font-size: 0.9rem;
+        text-align: left;
+        padding: 0 10px;
+        text-align: justify;
+    }
+
+    h1.name {
+        font-size: 2rem;
+        border-right: none;
+        width: 100%;
         text-align: center;
+    }
+
+    /* Adjust typing animation for responsiveness */
+    @keyframes typing {
+        from {
+            width: 0
+        }
+        to {
+            width: 100%
+        }
+    }
+
+    div.social {
+        margin-top: 10px;
+        font-size: 24px;
+    }
+
+    nav.menu {
+        width: 90%;
+        font-size: 24px;
+    }
+
+    /* Resume and Projects Layout for Mobile */
+    .main-grid,
+    .project-grid {
+        grid-template-columns: 1fr;
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
+
+    main,
+    .main-project {
+        grid-column: 1;
+        margin-inline: auto;
+    }
+
+    .page-title{
+        text-align: left;
+        font-size: var(--fs-600);
+        padding-top: 0.5rem;
+    }
+
+    .intro{
+        font-size: var(--fs-300);
+        display:block;
+        flex-direction: column;
+        height: auto;
+        overflow-x: hidden;
+        text-align: justify;
+    }
+
+    aside {
+        display: none;
+    }
+
+    .job-experience,
+    .universities,
+    .certificates,
+    .project-list-android,
+    .project-list-web-dev {
+        overflow-x: scroll;
+
+    }
+
+    .job,
+    .schools,
+    .program,
+    .project {
+        width: 100%;
+        padding: 1.5rem;
+    }
+
+    .job-info,
+    .school-name,
+    .program-name {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .job p,
+    .schools p{
+        text-align: justify;
+    }
+
+    .year {
+        margin-bottom: 0.5rem;
+    }
+
+    .prj-img {
+        width: 100%;
+        height: auto;
+    }
+
+    img.project-image {
+        max-width: 100%;
+        /* Ensure the image itself doesn't overflow */
+        height: auto;
+        /* Maintain aspect ratio */
+    }
+}
+
+@media (max-width: 480px) {
+
+    /* General body adjustments */
+    body {
+        font-size: var(--fs-300);
+        /* Slightly smaller base font size */
     }
 
     h1.name {
         font-size: 1.5rem;
-    }
-
-
-    div.social {
-        margin-top: 10px;
-        font-size: 18px;
-    }
-
-
-    section.projects h1 {
-        font-size: 1.8rem;
-    }
-
-    section.projects h3 {
-        font-size: 1.3rem;
-        margin-top: 20px;
-    }
-
-    section.projects p {
-        font-size: 0.9rem;
-    }
-
-    section.projects a {
-        font-size: 1rem;
-        margin: 0 5px;
-    }
-
-    section.projects i {
-       font-size: 1rem;
-    }
-
-    div.certifications{
-        flex-direction: column;
-        align-items: center;
-        height: auto;
-    }
-
-    img.certimg{
-        width: 100px;
-        height: 100px;
-        object-fit: cover;
-        padding: 10px;
-        margin-top: 5px;
-    }
-
-}
-
-@media (max-width: 480px) {
-    h1.name {
-        font-size: 1.25rem; /* Further adjust font size */
+        /* Further adjust font size */
     }
 
     div.social {
-        margin-top: 10px;
-        font-size: 18px;
+        font-size: 20px;
     }
 
     p.about {
         font-size: 0.8rem;
         line-height: 1.4;
+        padding: 0 5px;
+        /* Reduce padding */
+    }
+
+    section.about {
         padding: 10px;
     }
 
     img.bio {
-        max-width: 250px;
+        max-width: 200px;
+        /* Even smaller max-width for image */
     }
 
     h1 {
+        /* This H1 rule is too general, it should target h1.name specificially */
         font-size: 1.5rem;
         text-align: center;
         margin-bottom: 15px;
     }
 
-    section.projects {
-        padding: 10px;
-        align-items: left;
+    .job,
+    .schools,
+    .program,
+    .project {
+        padding: 1rem;
+        /* Further reduce padding */
     }
 
-    section.projects h1 {
-        font-size: 1.5rem;
-    }
-
-    section.projects h3 {
-        font-size: 1.1rem;
-    }
-
-    section.projects p {
-        font-size: 0.8rem;
-    }
-
-    section.projects a {
-        font-size: 0.9rem;
-    }
-
-    section.projects i {
-        font-size: 0.9rem;
-    }
-
-    div.certifications{
+    .job-info,
+    .school-name,
+    .program-name {
         flex-direction: column;
-        align-items: center;
-        height: auto;
+        /* Ensure stacking */
+        align-items: flex-start;
     }
 
-    img.certimg{
-        width: 100px;
-        height: 100px;
-        object-fit: cover;
-        padding: 10px;
-        margin-top: 5px;
+    .role {
+        font-size: var(--fs-500);
+        /* Adjust font size for smaller screens */
+    }
+
+    .year {
+        font-size: var(--fs-200);
+        /* Adjust font size for smaller screens */
+    }
+
+    aside {
+        display: none;
     }
 }

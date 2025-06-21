@@ -1,17 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    {% include "_head.html" %}
-    <title>About Erika</title>
-</head>
-<body data-gr-c-s-loaded="true" style="margin: 0px;">
-
-    {% include "_menu.html" %}
+{% extends "layout.html" %}
+{% block title %} About Erika {% endblock %}
+{% block body %}
 
     <section class="about">
         <img class="bio" src="/static/EAHeadshot.png" alt="Erika Avila">
-        <div>
-            <h1 style="font-family: Fira Code, monospace;">About Erika</h1>
+        <div class="long-bio">
+            <h1 class="bio-header">About Erika</h1>
 
             <p class="about">Erika Avila earned her Bachelor of Science in Computer Science from Florida State University in December 2024.
                 Her academic foundation also includes a Bachelor of Arts in Interdisciplinary Studies from Florida International University and an Associate in Arts in Biology from Miami Dade College.
@@ -31,6 +25,4 @@
         </div>
     </section>
 
-
-</body>
-</html>
+{% endblock %}

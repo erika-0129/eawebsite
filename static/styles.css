@@ -426,9 +426,17 @@ aside {
 }
 
 /* Project Site */
+
+.project-links-container {
+    display: flex; /* or display: grid; grid-template-columns: 1fr 1fr; */
+    justify-content: center; /* Centers the links horizontally */
+    gap: 15px; /* Adds some space between the links */
+    margin-top: 10px; /* Optional: adds space above the links */
+}
+
 .project {
     display: grid;
-    flex-direction: column;
+     /* flex-direction: column; <-- This won't do anything with display: grid */
     border-radius: 0.5rem;
     padding: 2rem;
     background: var(--clr-primary-800);
@@ -460,6 +468,10 @@ img.project-image {
     width: 100%;
     height: 100%;
     object-fit: contain;
+}
+
+.project-sites{
+    font-size: 20px;
 }
 
 /* Responsive Design for Smaller Screens */

@@ -38,7 +38,7 @@ html {
 
 body {
     margin: 0;
-    background: #0d0918;
+    background: linear-gradient(to top, #1e1537, #0d0918 );
     font-family: var(--ff-base);
     font-size: var(--fs-400);
     line-height: 1.5;

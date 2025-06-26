@@ -25,7 +25,6 @@
 
 html {
     color-scheme: dark;
-    /* Prevent horizontal scrollbar from very wide elements */
     overflow-x: hidden;
 }
 
@@ -38,7 +37,7 @@ html {
 
 body {
     margin: 0;
-    background: linear-gradient(to top, #1e1537, #0d0918 );
+    background: #0d0918;
     font-family: var(--ff-base);
     font-size: var(--fs-400);
     line-height: 1.5;
@@ -74,15 +73,8 @@ section.home {
     justify-content: center;
     align-items: center;
     height: 60vh;
-    text-align: center;
-    padding: 0 10px;
-    margin: 0 auto;
-    border-radius: 22px;
     overflow: hidden;
-    /* Keep this to hide content outside of the section */
-    font-weight: bold;
     max-width: 100%;
-    /* Ensure it doesn't overflow */
 }
 
 section.home::before {
@@ -92,14 +84,12 @@ section.home::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("background_image.png");
-    background-size: 500px 450px;
+    background-image: url("images/a-chosen-soul-aixyp-027qg-unsplash.jpg");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    border-radius: 22px;
     opacity: 0.5;
     z-index: -1;
-    /* Moves the background behind content */
 }
 
 @keyframes fadeInAnimation {
@@ -112,9 +102,9 @@ section.home::before {
     }
 }
 
-h1.name {
+.name {
     font-family: "Fira Code", monospace;
-    font-size: 3rem;
+    font-size: 3em;
     overflow: hidden;
     border-right: .15em hotpink;
     white-space: nowrap;
@@ -123,10 +113,8 @@ h1.name {
         typing 1s steps(20, end) forwards,
         blink .8s infinite;
     text-align: center;
-    /* Added to prevent overflow during typing animation on smaller screens */
     max-width: 100%;
     box-sizing: border-box;
-    /* Include padding/border in width */
 }
 
 /* Typing effect for name*/
@@ -138,8 +126,6 @@ h1.name {
     to {
         width: 50%
     }
-
-    /* This 50% might be too wide on small screens. Consider max-width on h1.name */
 }
 
 /* The typewriter cursor effect */
@@ -166,7 +152,6 @@ section.about {
     padding-top: 1rem;
     text-align: justify;
     margin: 0 auto;
-    /* Added to ensure the about section itself doesn't cause overflow */
     max-width: 100%;
 }
 
@@ -195,9 +180,7 @@ p.about {
 img.bio {
     margin: 0 20px;
     width: 350px;
-    /* This needs to be more flexible */
     max-width: 100%;
-    /* Important for responsiveness */
     height: auto;
     border-radius: 0.5rem;
     background: var(--clr-primary-800);
@@ -206,25 +189,20 @@ img.bio {
 /* Local links */
 nav.menu {
     border-radius: 25px;
-    border: 3px solid var(--clr-primary-800);
+    border: 3px solid var(--clr-primary-200);
     width: 350px;
-    /* Make this responsive */
     margin: auto;
     margin-top: 25px;
     text-align: center;
     padding: 15px;
     font-size: 36px;
-    /* Make this responsive */
     max-width: 90%;
-    /* Adjust as needed, prevents fixed width from overflowing */
     box-sizing: border-box;
 }
 
 div.social {
     text-align: center;
-    margin-top: 20px;
     font-size: 36px;
-    /* Make this responsive */
     padding: 15px;
     max-width: 100%;
 }
@@ -341,8 +319,6 @@ aside {
 }
 
 
-
-
 .job,
 .schools,
 .program {
@@ -369,7 +345,6 @@ aside {
     justify-content: space-between;
     align-items: baseline;
     margin-bottom: 1rem;
-    /* Allow flex items to wrap if needed */
     flex-wrap: wrap;
 }
 
@@ -399,7 +374,6 @@ aside {
     align-content: center;
     gap: 3rem;
     font-size: 30px;
-    /* Added to prevent overflow if the icons push content out */
     max-width: 100%;
     box-sizing: border-box;
 }
@@ -428,15 +402,14 @@ aside {
 /* Project Site */
 
 .project-links-container {
-    display: flex; /* or display: grid; grid-template-columns: 1fr 1fr; */
-    justify-content: center; /* Centers the links horizontally */
-    gap: 15px; /* Adds some space between the links */
-    margin-top: 10px; /* Optional: adds space above the links */
+    display: flex;
+    justify-content: center; 
+    gap: 15px; 
+    margin-top: 10px; 
 }
 
 .project {
     display: grid;
-     /* flex-direction: column; <-- This won't do anything with display: grid */
     border-radius: 0.5rem;
     padding: 2rem;
     background: var(--clr-primary-800);
@@ -483,15 +456,14 @@ img.project-image {
     }
 
     section.home {
-        width: 90%;
-        padding: 20px;
+        padding: 10px;
         height: auto;
-        min-height: 50vh;
+        min-height: 70vh;
     }
 
     section.home::before {
-        background-size: contain;
-        background-position: center top;
+        background-size: cover;
+        background-position: center center;
     }
 
     section.about {
@@ -522,10 +494,7 @@ img.project-image {
         text-align: justify;
     }
 
-    h1.name {
-        font-size: 2rem;
-        border-right: none;
-        width: 100%;
+    .name {
         text-align: center;
     }
 
@@ -622,9 +591,7 @@ img.project-image {
 
     img.project-image {
         max-width: 100%;
-        /* Ensure the image itself doesn't overflow */
         height: auto;
-        /* Maintain aspect ratio */
     }
 }
 
@@ -633,12 +600,10 @@ img.project-image {
     /* General body adjustments */
     body {
         font-size: var(--fs-300);
-        /* Slightly smaller base font size */
     }
 
-    h1.name {
+    .name {
         font-size: 1.5rem;
-        /* Further adjust font size */
     }
 
     div.social {
@@ -649,7 +614,6 @@ img.project-image {
         font-size: 0.8rem;
         line-height: 1.4;
         padding: 0 5px;
-        /* Reduce padding */
     }
 
     section.about {
@@ -658,22 +622,14 @@ img.project-image {
 
     img.bio {
         max-width: 200px;
-        /* Even smaller max-width for image */
     }
 
-    h1 {
-        /* This H1 rule is too general, it should target h1.name specificially */
-        font-size: 1.5rem;
-        text-align: center;
-        margin-bottom: 15px;
-    }
 
     .job,
     .schools,
     .program,
     .project {
         padding: 1rem;
-        /* Further reduce padding */
     }
 
     .job-info,
